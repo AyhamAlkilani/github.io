@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cybersecurity and Backend Engineer Portfolio - Ayham Alkilani">
+  <meta name="keywords" content="cybersecurity, backend, developer, portfolio, Ayham Alkilani">
+  <meta name="author" content="Ayham Alkilani">
   <title>Ayham Alkilani | Cybersecurity & Backend Engineer</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
   <style>
     :root {
-      --bg: #121212;
-      --text: #e0e0e0;
+      --bg: #10131a;
+      --text: #e6e9ef;
       --primary: #00adb5;
-      --accent: #393e46;
+      --accent: #23272e;
+      --highlight: #181c20;
+      --shadow: 0 4px 24px rgba(0,0,0,0.18);
+      --card: #181c20;
+      --border: #2c313a;
+      --muted: #bfc9d1;
+      --mono: 'Fira Mono', monospace;
     }
 
     * {
@@ -19,203 +30,396 @@
     }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
       background-color: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.75;
+      font-size: 1.08em;
+      letter-spacing: 0.01em;
     }
 
     header {
       text-align: center;
-      padding: 40px 20px 20px;
-      background-color: var(--accent);
+      padding: 48px 20px 24px;
+      background: linear-gradient(90deg, var(--accent) 60%, var(--primary) 100%);
+      box-shadow: var(--shadow);
+      border-bottom: 1.5px solid var(--border);
+    }
+
+    header img {
+      border: 3px solid var(--primary);
+      margin-bottom: 18px;
+      box-shadow: 0 2px 12px #0004;
     }
 
     header h1 {
-      font-size: 2em;
+      font-size: 2.6em;
       color: var(--primary);
+      letter-spacing: 1.5px;
+      margin-bottom: 8px;
+      font-weight: 600;
+      font-family: 'Montserrat', Arial, sans-serif;
     }
 
     header p {
-      font-size: 1em;
-      color: var(--text);
+      font-size: 1.18em;
+      color: #b0f1f7;
+      margin-bottom: 10px;
+      font-weight: 500;
     }
 
     nav {
-      margin-top: 15px;
+      margin-top: 18px;
     }
 
     nav a {
-      margin: 0 12px;
+      margin: 0 18px;
       color: var(--text);
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      font-size: 1.08em;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width .2s;
+      margin: 0 auto;
     }
 
     nav a:hover {
       color: var(--primary);
     }
+    nav a:hover::after {
+      width: 100%;
+    }
 
     section {
       max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
+      margin: 38px auto;
+      padding: 44px 28px 36px 28px;
+      background: var(--card);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      border: 1.5px solid var(--border);
     }
 
     h2 {
-      font-size: 1.5em;
+      font-size: 1.55em;
       color: var(--primary);
-      border-bottom: 1px solid var(--accent);
-      margin-bottom: 20px;
+      border-bottom: 2px solid var(--accent);
+      margin-bottom: 22px;
+      padding-bottom: 6px;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+
+    h3 {
+      font-size: 1.18em;
+      color: var(--primary);
+      margin-bottom: 6px;
+      font-weight: 600;
+      font-family: 'Montserrat', Arial, sans-serif;
     }
 
     .project, .contact a {
-      margin-bottom: 20px;
+      margin-bottom: 24px;
+    }
+
+    .project {
+      background: var(--highlight);
+      border-left: 4px solid var(--primary);
+      border-radius: 10px;
+      padding: 18px 22px 14px 22px;
+      margin-bottom: 28px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      transition: transform 0.15s, box-shadow 0.15s;
+      border: 1px solid var(--border);
+    }
+    .project:hover {
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: 0 6px 24px rgba(0,173,181,0.10);
+      border-color: var(--primary);
     }
 
     .project h3 {
-      color: var(--text);
-      margin-bottom: 5px;
+      margin-bottom: 7px;
+      font-size: 1.13em;
     }
 
-    .project p {
-      color: #aaa;
+    .project p, .project ul {
+      color: var(--muted);
+      margin-bottom: 7px;
+      font-size: 1em;
+    }
+
+    .project ul {
+      margin-left: 18px;
+      margin-bottom: 0;
+      padding-left: 18px;
     }
 
     .project a {
       display: inline-block;
-      margin-top: 5px;
+      margin-top: 6px;
       color: var(--primary);
       text-decoration: none;
+      font-weight: bold;
+      letter-spacing: 0.2px;
+      transition: color 0.2s;
+      font-family: var(--mono);
+      font-size: 0.98em;
     }
 
     .project a:hover {
+      color: #fff;
       text-decoration: underline;
     }
 
     ul {
-      padding-left: 20px;
+      padding-left: 22px;
     }
 
     li {
       margin-bottom: 8px;
+      line-height: 1.6;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 24px;
+      margin-top: 10px;
+      margin-bottom: 0;
+      list-style: none;
+      padding-left: 0;
+    }
+    .skills-list li {
+      background: #22252b;
+      color: #b0f1f7;
+      border-radius: 6px;
+      padding: 7px 16px;
+      font-size: 1em;
+      font-weight: 500;
+      margin-bottom: 0;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+      font-family: var(--mono);
+      border: 1px solid var(--border);
+      letter-spacing: 0.02em;
+    }
+
+    .contact {
+      margin-top: 10px;
+    }
+    .contact a {
+      display: block;
+      color: var(--primary);
+      font-size: 1.08em;
+      margin-bottom: 7px;
+      text-decoration: none;
+      transition: color 0.2s;
+      font-family: var(--mono);
+    }
+    .contact a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .contact p {
+      color: #bfc9d1;
+      margin-bottom: 8px;
+      font-size: 1.05em;
+    }
+
+    .quote {
+      font-style: italic;
+      color: #b0f1f7;
+      background: #1e2329;
+      border-left: 4px solid var(--primary);
+      padding: 10px 18px;
+      border-radius: 6px;
+      margin: 18px 0 0 0;
+      font-size: 1.08em;
+      font-family: var(--mono);
     }
 
     footer {
       text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
+      padding: 22px;
+      font-size: 1em;
       background-color: var(--accent);
-      color: #999;
+      color: #bfc9d1;
+      margin-top: 36px;
+      border-radius: 0 0 12px 12px;
+      border-top: 1.5px solid var(--border);
+      letter-spacing: 0.04em;
     }
 
     @media screen and (max-width: 600px) {
       header h1 {
         font-size: 1.5em;
       }
-
       nav a {
         display: block;
-        margin: 5px 0;
+        margin: 7px 0;
       }
-
       section {
-        padding: 30px 15px;
+        padding: 24px 8px;
+      }
+      .skills-list {
+        flex-direction: column;
+        gap: 10px 0;
       }
     }
   </style>
 </head>
 <body>
+  <header>
+    <div class="container">
+      <h1>Ayham Alkilani</h1>
+      <p>Cybersecurity & Backend Engineer</p>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#blog">Blog</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <a href="assets/Ayham_CV.pdf" class="btn" download>Download CV</a>
+      </nav>
+    </div>
+  </header>
 
-<header>
-  <h1>Ayham Alkilani</h1>
-  <p>Cybersecurity & Backend Engineer</p>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        I am a results-driven Cybersecurity and Backend Engineer with an MEng in Computer Science with Cyber Security from the University of Southampton. My expertise spans secure backend development, penetration testing, and advanced technical problem-solving. I have a proven track record in designing and implementing robust security solutions, conducting comprehensive vulnerability assessments, and leading research in AI-driven robotics and secure systems. I am passionate about leveraging cutting-edge technologies to deliver resilient, scalable, and innovative solutions that address complex security challenges in dynamic environments.
+      </p>
+    </div>
+  </section>
 
-<section id="about">
-  <h2>About Me</h2>
-  <p>
-    I'm a cybersecurity and backend engineer with a Master’s degree in Computer Science with Cyber Security from the University of Southampton.
-    I bring over 3 years of hands-on experience supporting, securing, and automating IT infrastructures in media studios and enterprise environments.
-    I specialize in building secure backend systems, AI-integrated robotics, and Python-based automation tools.
-    My goal is to join a team where I can contribute to high-impact, security-driven applications and scalable systems.
-  </p>
-</section>
+  <section id="education" class="section">
+    <div class="container">
+      <h2>Education & Certifications</h2>
+      <ul>
+        <li><strong>MEng in Computer Science with Cyber Security</strong> – University of Southampton</li>
+        <li>Certified Ethical Hacker (CEH) – EC-Council</li>
+        <li>Digital Forensics – EC-Council</li>
+        <li>SIEM Certification – HTB Academy (in progress)</li>
+        <li>Advanced SQL Injection Attacks – EC-Council</li>
+      </ul>
+    </div>
+  </section>
 
-<section id="projects">
-  <h2>Projects</h2>
+  <section id="experience" class="section">
+    <div class="container">
+      <h2>Professional Experience</h2>
+      <div class="job">
+        <h3>Freelance IT Consultant & Full Stack Developer – Southampton, UK</h3>
+        <p>Provided secure software and hardware solutions, built backend systems, and conducted vulnerability assessments for local clients.</p>
+      </div>
+      <div class="job">
+        <h3>Network Engineer – VMCloud, London</h3>
+        <p>Configured and secured enterprise networks, performed penetration tests, and automated security analysis using Python.</p>
+      </div>
+      <div class="job">
+        <h3>IT Engineer – VMCloud, London</h3>
+        <p>Delivered IT support, implemented network policies, and assisted in secure cloud migrations and compliance checks.</p>
+      </div>
+    </div>
+  </section>
 
-  <div class="project">
-    <h3>Autonomous Person-Following Robot</h3>
-    <p>
-      Designed and built an AI-powered desk robot that tracks and follows people using YOLOv8 and a VL53L5CX Time-of-Flight sensor.
-      Developed smart movement logic using multithreading, MQTT messaging, and motion decay for smooth behavior.
-    </p>
-    <p><strong>Tech:</strong> Python, OpenCV, Raspberry Pi 3/5, MQTT, GPIO, ToF sensor</p>
-    <a href="https://github.com/ayhamalkilani/robot-tracking">View on GitHub</a>
-  </div>
+  <section id="projects" class="section">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="project">
+        <h3>AI-Powered Person-Following Robot</h3>
+        <p>Used YOLOv8 and ToF sensor with MQTT on Raspberry Pi for real-time tracking.</p>
+        <a href="https://github.com/ayhamalkilani/robot-tracking" target="_blank">GitHub Repo</a>
+        <video src="assets/robot_demo.mp4" controls></video>
+      </div>
+      <div class="project">
+        <h3>Malicious Code Detection Tool</h3>
+        <p>Python tool using LLMs to analyze Git diffs for suspicious code insertions in open-source libraries.</p>
+        <a href="https://github.com/ayhamalkilani/code-threat-detector" target="_blank">GitHub Repo</a>
+      </div>
+    </div>
+  </section>
 
-  <div class="project">
-    <h3>Threat Detection in Open-Source Code</h3>
-    <p>
-      Built a lightweight analysis tool that uses LLMs to evaluate code changes in Git commits and detect potentially malicious insertions.
-      Focused on automating early detection of supply chain threats in open-source software.
-    </p>
-    <p><strong>Tech:</strong> Python, Git, LLM APIs, Static Code Analysis</p>
-    <a href="https://github.com/ayhamalkilani/code-threat-detector">View on GitHub</a>
-  </div>
+  <section id="blog" class="section">
+    <div class="container">
+      <h2>Blog & Articles</h2>
+      <p>
+        This section features my original articles and technical write-ups, where I share in-depth knowledge, research findings, and practical solutions in cybersecurity, backend engineering, and AI. Each post is carefully crafted to provide actionable insights, industry best practices, and real-world examples for both aspiring and experienced professionals.  
+        <br>
+        The content is regularly updated to reflect the latest trends, methodologies, and tools in the field, ensuring relevance and value for a diverse technical audience.
+      </p>
+      <ul>
+        <li>
+          <a href="/blog/forensics-memory-analysis.html">Memory Forensics with Volatility</a><br>
+          <span style="color:var(--muted);font-size:0.98em;">
+            A comprehensive guide to memory image analysis, artifact extraction, and threat investigation using Volatility.
+          </span>
+        </li>
+        <li>
+          <a href="/blog/backend-automation.html">Backend Automation with Python</a><br>
+          <span style="color:var(--muted);font-size:0.98em;">
+            Best practices and hands-on techniques for automating backend workflows, deployment, and monitoring.
+          </span>
+        </li>
+        <li>
+          <a href="/blog/malware-detection-llm.html">Malware Detection using LLMs</a><br>
+          <span style="color:var(--muted);font-size:0.98em;">
+            An exploration of leveraging large language models to identify malicious code patterns in open-source projects.
+          </span>
+        </li>
+      </ul>
+    </div>
+  </section>
 
-  <div class="project">
-    <h3>Memory Forensics Investigation</h3>
-    <p>
-      Analyzed compromised memory images using Volatility and string analysis to uncover attacker behavior and persistent access techniques.
-      Documented findings in professional forensic report style for court use.
-    </p>
-    <p><strong>Tech:</strong> Volatility, gstrings, MFT analysis, Task Scheduler review</p>
-  </div>
+  <section id="skills" class="section">
+    <div class="container">
+      <h2>Technical Skills</h2>
+      <ul>
+        <li><strong>Languages:</strong> Python, JavaScript, Bash, SQL</li>
+        <li><strong>Backend:</strong> Flask, FastAPI, PostgreSQL, Docker</li>
+        <li><strong>Cybersecurity:</strong> CEH, Nmap, SIEM tools, Volatility, Wireshark</li>
+        <li><strong>Machine Learning:</strong> YOLOv8, OpenCV, LLM APIs</li>
+        <li><strong>Hardware:</strong> Raspberry Pi, ToF Sensor, ESP32-CAM, GPIO</li>
+      </ul>
+    </div>
+  </section>
 
-  <div class="project">
-    <h3>Secure Internal Web Tool</h3>
-    <p>
-      Developed a Flask-based internal tool with authentication, logging, and secure data processing for a small team.
-      Implemented input sanitization, user access control, and deployed securely with Docker on Ubuntu.
-    </p>
-    <p><strong>Tech:</strong> Flask, Docker, SQLite, Ubuntu Server, NGINX</p>
-  </div>
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact</h2>
+      <form action="https://formspree.io/f/your-form-id" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
 
-</section>
-
-<section id="skills">
-  <h2>Skills</h2>
-  <ul>
-    <li><strong>Languages:</strong> Python, JavaScript, Bash, SQL</li>
-    <li><strong>Backend & Tools:</strong> Flask, FastAPI, PostgreSQL, Docker, Git, MQTT</li>
-    <li><strong>Cybersecurity:</strong> CEH, SIEM tools, Penetration Testing, Nmap, Wireshark, Volatility</li>
-    <li><strong>Machine Learning & Vision:</strong> YOLOv8, OpenCV, LLM integration</li>
-    <li><strong>Hardware & Automation:</strong> Raspberry Pi, ESP32-CAM, VL53L5CX, GPIO, Motor Control</li>
-    <li><strong>Soft Skills:</strong> Project planning, documentation, research, critical thinking</li>
-  </ul>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <div class="contact">
-    <a href="mailto:k.ayham.k@hotmail.com">Email: k.ayham.k@hotmail.com</a>
-    <a href="https://linkedin.com/in/ayhamalkilani">LinkedIn: linkedin.com/in/ayhamalkilani</a>
-    <a href="https://github.com/ayhamalkilani">GitHub: github.com/ayhamalkilani</a>
-    <p>Based in Southampton, UK | Full Driving Licence</p>
-  </div>
-</section>
-
-<footer>
-  <p>© Ayham Alkilani 2025 | Built with HTML & hosted on GitHub Pages</p>
-</footer>
-
+  <footer>
+    <div class="container">
+      <p>© 2025 Ayham Alkilani. All rights reserved.</p>
+      <div class="social">
+        <a href="https://github.com/ayhamalkilani" target="_blank">GitHub</a>
+        <a href="https://gitlab.com/ayhamalkilani" target="_blank">GitLab</a>
+        <a href="https://linkedin.com/in/ayhamalkilani" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
