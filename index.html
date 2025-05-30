@@ -5,46 +5,123 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ayham Alkilani | Cybersecurity & Backend Engineer</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    :root {
+      --bg: #121212;
+      --text: #e0e0e0;
+      --primary: #00adb5;
+      --accent: #393e46;
+    }
+
+    * {
       margin: 0;
-      background-color: #f4f4f4;
-      color: #333;
+      padding: 0;
+      box-sizing: border-box;
     }
-    header, footer {
-      background-color: #222;
-      color: #fff;
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
       text-align: center;
-      padding: 20px 0;
+      padding: 40px 20px 20px;
+      background-color: var(--accent);
     }
+
+    header h1 {
+      font-size: 2em;
+      color: var(--primary);
+    }
+
+    header p {
+      font-size: 1em;
+      color: var(--text);
+    }
+
+    nav {
+      margin-top: 15px;
+    }
+
     nav a {
-      margin: 0 15px;
-      color: #fff;
+      margin: 0 12px;
+      color: var(--text);
       text-decoration: none;
+      font-weight: bold;
     }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
     section {
       max-width: 900px;
       margin: auto;
       padding: 40px 20px;
     }
+
     h2 {
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 5px;
-    }
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-    }
-    li {
-      margin-bottom: 10px;
-    }
-    .project {
+      font-size: 1.5em;
+      color: var(--primary);
+      border-bottom: 1px solid var(--accent);
       margin-bottom: 20px;
     }
-    .contact a {
-      display: block;
+
+    .project, .contact a {
+      margin-bottom: 20px;
+    }
+
+    .project h3 {
+      color: var(--text);
+      margin-bottom: 5px;
+    }
+
+    .project p {
+      color: #aaa;
+    }
+
+    .project a {
+      display: inline-block;
+      margin-top: 5px;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .project a:hover {
+      text-decoration: underline;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
       margin-bottom: 8px;
-      color: #333;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      background-color: var(--accent);
+      color: #999;
+    }
+
+    @media screen and (max-width: 600px) {
+      header h1 {
+        font-size: 1.5em;
+      }
+
+      nav a {
+        display: block;
+        margin: 5px 0;
+      }
+
+      section {
+        padding: 30px 15px;
+      }
     }
   </style>
 </head>
@@ -64,9 +141,9 @@
 <section id="about">
   <h2>About Me</h2>
   <p>
-    I'm a recent MEng Computer Science with Cyber Security graduate from the University of Southampton. 
+    I'm a recent MEng Computer Science with Cyber Security graduate from the University of Southampton.
     I bring over 3 years of hands-on experience in IT support, network engineering, and penetration testing.
-    My focus is on backend systems, automation, and real-time robotics using AI and LLMs.
+    I focus on backend systems, automation, and real-time robotics powered by AI.
   </p>
 </section>
 
@@ -75,22 +152,22 @@
 
   <div class="project">
     <h3>Real-Time Person-Tracking Robot</h3>
-    <p>AI-powered robot using Raspberry Pi, YOLOv8, ToF sensor, and MQTT for smooth tracking and obstacle avoidance.</p>
-    <p><strong>Tech:</strong> Python, OpenCV, YOLO, MQTT, Raspberry Pi</p>
-    <a href="https://github.com/ayhamalkilani/robot-tracking">GitHub Repo</a>
+    <p>AI-powered robot using Raspberry Pi, YOLOv8, ToF sensor, and MQTT for real-time tracking.</p>
+    <p><strong>Tech:</strong> Python, OpenCV, MQTT, Raspberry Pi</p>
+    <a href="https://github.com/ayhamalkilani/robot-tracking">View on GitHub</a>
   </div>
 
   <div class="project">
     <h3>Malicious Code Detection Tool</h3>
-    <p>Built a static analysis tool to detect suspicious code changes in open-source supply chains.</p>
-    <p><strong>Tech:</strong> Python, LLMs, Git</p>
-    <a href="https://github.com/ayhamalkilani/code-threat-detector">GitHub Repo</a>
+    <p>Built a tool for detecting suspicious changes in open-source projects.</p>
+    <p><strong>Tech:</strong> Python, Git, LLM</p>
+    <a href="https://github.com/ayhamalkilani/code-threat-detector">View on GitHub</a>
   </div>
 
   <div class="project">
     <h3>Memory Forensics Investigation</h3>
-    <p>Performed memory analysis using Volatility and strings analysis to trace malware activity in compromised machines.</p>
-    <p><strong>Tech:</strong> Volatility, Linux, Hex tools</p>
+    <p>Used Volatility to analyze memory dumps and identify post-exploitation behavior.</p>
+    <p><strong>Tech:</strong> Volatility, Linux, Strings analysis</p>
   </div>
 
 </section>
@@ -99,8 +176,8 @@
   <h2>Skills</h2>
   <ul>
     <li><strong>Languages:</strong> Python, JavaScript, Bash</li>
-    <li><strong>Backend:</strong> Flask, FastAPI, PostgreSQL</li>
-    <li><strong>Tools:</strong> Docker, Git, MQTT, OpenCV, YOLO</li>
+    <li><strong>Frameworks:</strong> Flask, FastAPI</li>
+    <li><strong>Tools:</strong> Docker, Git, MQTT, OpenCV</li>
     <li><strong>Cybersecurity:</strong> SIEM, Nmap, Wireshark, CEH</li>
     <li><strong>Hardware:</strong> Raspberry Pi, ToF sensors, ESP32-CAM</li>
   </ul>
@@ -110,8 +187,8 @@
   <h2>Contact</h2>
   <div class="contact">
     <a href="mailto:k.ayham.k@hotmail.com">Email: k.ayham.k@hotmail.com</a>
-    <a href="https://www.linkedin.com/in/ayhamalkilani/">LinkedIn</a>
-    <a href="https://github.com/ayhamalkilani">GitHub</a>
+    <a href="https://linkedin.com/in/ayhamalkilani">LinkedIn: linkedin.com/in/ayhamalkilani</a>
+    <a href="https://github.com/ayhamalkilani">GitHub: github.com/ayhamalkilani</a>
   </div>
 </section>
 
